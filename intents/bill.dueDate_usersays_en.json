@@ -1,0 +1,55 @@
+[
+  {
+    "id": "0bc8f9f5-99b0-42c0-a688-c12aabcaa37b",
+    "data": [
+      {
+        "text": "Check bill dates",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548553389
+  },
+  {
+    "id": "bfc4fc03-fe6d-43c4-a112-e8e169d4ec43",
+    "data": [
+      {
+        "text": "Pay ",
+        "userDefined": false
+      },
+      {
+        "text": "bills",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548553389
+  },
+  {
+    "id": "46529234-8d63-48b8-96c1-9e6c2eef2447",
+    "data": [
+      {
+        "text": "When is my next bill?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548553389
+  },
+  {
+    "id": "a2d01642-f0cc-469c-bcf9-dbe096358f78",
+    "data": [
+      {
+        "text": "When are my bills due?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548553389
+  }
+]
