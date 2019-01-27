@@ -34,16 +34,16 @@ let monthArray = [
     'December'
   ]
   
-const bills = [
+let bills = [
     {
         'type': 'Phone Bill',
         'amount': 30.00,
-        'duedate': new Date('Jan 2, 2019')
+        'duedate': new Date('Jan 12, 2019')
     },
     {
         'type': 'Rent' ,
         'amount': 100.00,
-        'duedate': new Date('Jan 13, 2019')
+        'duedate': new Date('Jan 4, 2019')
         
     },{
         'type': 'Cable Bill',
@@ -51,38 +51,57 @@ const bills = [
         'duedate': new Date('Jan 24, 2019')
         
     }]
+    
+app.intent('bill.add', (conv, {billName, billAmount, billDue}) => {
+  bills.push({
+      'type': billName,
+      'amount': 123,
+      'duedate': 'adsf'
+  })
+  }
+ )
 
 app.intent('bill.dueDate', conv => {
     results = "Here are your bills. ";
     for (let i = 0; i < bills.length; i++) { 
         let datedue = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
         results += `${bills[i].type} is due on ${datedue}. `
-    }
+    } 
     conv.ask(results)
 })
 
 app.intent('bill.upcoming', conv => {
-    upcoming = 0;
-    results = "You have no bills."
+    let upcoming = 0;
+    let results = "You have no bills."
+    
     for (let i = 0; i < bills.length; i++) { 
-        if (i===0){
-            upcoming = bills[0].getMilliseconds()
-            results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
-        results += `${bills[i].type} is due on ${datedue}. `
-        } else if (upcoming == bills[i].getMilliseconds()){ 
-            results = results + `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
-        results += `${bills[i].type} is due on ${datedue}. `
-        } else if (upcoming > bills[i].getMilliseconds()){
-            upcoming = bills[i].getMilliseconds()
-            results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
-        }
+    if (i===0){
+        upcoming = bills[0].duedate.getTime();
+        results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}.`
+    } else if (upcoming === bills[i].duedate.getTime()){ 
+      // console.log(upcoming)
+      // console.log(bills[i].duedate.getTime())
+        results = `results + ${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}.`
+    // results += `${bills[i].type} is due on ${datedue}. `
+    } else if (upcoming > bills[i].duedate.getTime()){
+        upcoming = bills[i].duedate.getTime();
+        results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}.`
     }
+}
     conv.ask(results)
 })
+
+app.intent('bill.amount', (conv) => {
+    let sum = 0;
+    const totalBills = (accumulator, currentSum) => accumulator + currentSum;
+    const map1 = bills.map(bill => bill.amount);
+    conv.ask(`Your bills total to ${map1.reduce(totalBills)} dollars this month`);
+  }
+ )
 
 app.intent('Default Fallback Intent', conv => {
   conv.ask(`I didn't understand`)
   conv.ask(`I'm sorry, can you try again?`)
 })
 
-exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app)
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
