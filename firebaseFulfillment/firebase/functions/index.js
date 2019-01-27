@@ -17,6 +17,18 @@
 const functions = require("firebase-functions")
 const { dialogflow } = require("actions-on-google")
 
+//initialise DB connection
+var firebase = require("firebase-admin")
+var config = {
+	apiKey: "AIzaSyAZ2xapsnAmhQ9kUA3RvC5URWGn9tjDuWc",
+	authDomain: "nwhacks2019-3e447.firebaseapp.com",
+	databaseURL: "https://nwhacks2019-3e447.firebaseio.com",
+	projectId: "nwhacks2019-3e447",
+	storageBucket: "nwhacks2019-3e447.appspot.com",
+	messagingSenderId: "359750669573"
+}
+firebase.initializeApp(config)
+
 const app = dialogflow()
 
 let monthArray = [
@@ -53,10 +65,18 @@ let bills = [
 ]
 
 app.intent("bill.add", (conv, { billName, billAmount, billDue }) => {
-	bills.push({
-		type: billName,
-		amount: 123,
-		duedate: "adsf"
+	var billsRef = firebase.database().ref("/")
+
+	// Read from Firebase
+	billsRef.on("value", function(snapshot) {
+		let tempBills = snapshot.val()
+		tempBills.push({
+			type: billName,
+			amount: billAmount,
+			duedate: billDue
+		})
+		billsRef.set(tempBills)
+		conv.ask(`You ${billName} has been added to the records!`)
 	})
 })
 
