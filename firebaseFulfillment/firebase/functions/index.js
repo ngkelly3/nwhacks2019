@@ -19,28 +19,44 @@ const { dialogflow } = require('actions-on-google')
 
 const app = dialogflow()
 
+let monthArray = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ]
+  
 const bills = [
     {
         'type': 'Phone Bill',
         'amount': 30.00,
-        'duedate': 'January 2, 2019'
+        'duedate': new Date('Jan 2, 2019')
     },
     {
         'type': 'Rent' ,
         'amount': 100.00,
-        'duedate': 'January 13, 2019'
+        'duedate': new Date('Jan 13, 2019')
         
     },{
         'type': 'Cable Bill',
         'amount': 40.00,
-        'duedate': 'January 24, 2019'
+        'duedate': new Date('Jan 24, 2019')
         
     }]
 
 app.intent('bill.dueDate', conv => {
     results = "Here are your bills. ";
     for (let i = 0; i < bills.length; i++) { 
-        results += `${bills[i].type} is due on ${bills[i].duedate}. `
+        let datedue = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
+        results += `${bills[i].type} is due on ${datedue}. `
     }
     conv.ask(results)
 })
