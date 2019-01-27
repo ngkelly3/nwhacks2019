@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1d6dbc3f-5dbb-4de7-9f5f-792f5cc70df7",
+    "data": [
+      {
+        "text": "I need to make an appointment ",
+        "userDefined": false
+      },
+      {
+        "text": "at 3 PM",
+        "alias": "time",
+        "meta": "@sys.time",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "today",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": ".",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548545085
+  }
+]

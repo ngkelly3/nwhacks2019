@@ -1,0 +1,174 @@
+[
+  {
+    "id": "2cb17a46-edee-4a36-be59-4117a9228305",
+    "data": [
+      {
+        "text": "How late can I come in?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "42bb5ae9-ace0-4993-a5c0-7308f676d133",
+    "data": [
+      {
+        "text": "What are your hours?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "6b1d55b3-55ae-4d5d-bcf2-1c380f31a591",
+    "data": [
+      {
+        "text": "Tell me your opening hours.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "613cd173-a09c-4a08-8c68-eb26d338bb32",
+    "data": [
+      {
+        "text": "How early can I drop in?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "df55be11-a01a-43c9-b2cd-89d3932210c6",
+    "data": [
+      {
+        "text": "Business hours.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "358abdc5-943f-42ea-a479-53f5ec3580da",
+    "data": [
+      {
+        "text": "Are you open now?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "8c174907-c654-4327-a764-02174d5c7bf0",
+    "data": [
+      {
+        "text": "What time do you open ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "morning",
+        "alias": "time-period",
+        "meta": "@sys.time-period",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "21bcb9d4-3138-4109-a3b4-faf05b17f423",
+    "data": [
+      {
+        "text": "When do you close?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "9d5eff72-0dd3-470b-afc5-8f5348e01571",
+    "data": [
+      {
+        "text": "How late are you open on ",
+        "userDefined": false
+      },
+      {
+        "text": "weekends",
+        "alias": "date-period",
+        "meta": "@sys.date-period",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "adfcd866-3b01-4187-b7a4-ba04c4ab2ea5",
+    "data": [
+      {
+        "text": "Are you open ",
+        "userDefined": false
+      },
+      {
+        "text": "today",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548544794
+  },
+  {
+    "id": "35d0bfa4-1bbd-433a-bdcb-0520436e65d4",
+    "data": [
+      {
+        "text": "When are you open?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1548544659
+  }
+]

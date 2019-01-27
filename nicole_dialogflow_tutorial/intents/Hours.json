@@ -1,0 +1,50 @@
+{
+  "id": "2ee0836f-112a-4d66-806c-a8a57b9411b8",
+  "name": "Hours",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "47c59423-a7c6-46c4-a37e-043e959cbaf0",
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "id": "6cd0a2a0-21d7-4066-95a2-7853ca901432",
+          "dataType": "@sys.date-period",
+          "name": "date-period",
+          "value": "$date-period",
+          "isList": false
+        },
+        {
+          "id": "536949b1-f4ce-402d-8441-ad0905c0d6ac",
+          "dataType": "@sys.time-period",
+          "name": "time-period",
+          "value": "$time-period",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "We\u0027re open from 9 AM to 6 PM every day. Is there anything else I can do for you?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1548544794,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,73 @@
+{
+  "id": "d66b00ad-0cc2-4d94-8ef4-28b4773a5f66",
+  "name": "Make Appointment",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "8ffe4f70-90af-4e93-9e9e-803658273511",
+          "required": true,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Okay, I can help you with that. What day do you want to come in?"
+            },
+            {
+              "lang": "en",
+              "value": "Sure, what day are you coming in?"
+            },
+            {
+              "lang": "en",
+              "value": "Okay, what day will work for you?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "2c55ad91-7bb1-4adb-aad5-30fd236c601c",
+          "required": true,
+          "dataType": "@sys.time",
+          "name": "time",
+          "value": "$time",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "And what time works for you?"
+            },
+            {
+              "lang": "en",
+              "value": "What time?"
+            },
+            {
+              "lang": "en",
+              "value": "Now, what time do you want the appointment?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Got it. I have your appointment scheduled on $date at $time. See you soon. Good-bye."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1548545819,
+  "fallbackIntent": false,
+  "events": []
+}
