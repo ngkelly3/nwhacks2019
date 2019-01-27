@@ -61,6 +61,25 @@ app.intent('bill.dueDate', conv => {
     conv.ask(results)
 })
 
+app.intent('bill.upcoming', conv => {
+    upcoming = 0;
+    results = "You have no bills."
+    for (let i = 0; i < bills.length; i++) { 
+        if (i===0){
+            upcoming = bills[0].getMilliseconds()
+            results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
+        results += `${bills[i].type} is due on ${datedue}. `
+        } else if (upcoming == bills[i].getMilliseconds()){ 
+            results = results + `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
+        results += `${bills[i].type} is due on ${datedue}. `
+        } else if (upcoming > bills[i].getMilliseconds()){
+            upcoming = bills[i].getMilliseconds()
+            results = `${monthArray[bills[i].duedate.getMonth()]} ${bills[i].duedate.getDate()}, ${bills[i].duedate.getFullYear()}`
+        }
+    }
+    conv.ask(results)
+})
+
 app.intent('Default Fallback Intent', conv => {
   conv.ask(`I didn't understand`)
   conv.ask(`I'm sorry, can you try again?`)
